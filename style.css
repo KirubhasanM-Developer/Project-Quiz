@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background: #001e4d;
+}
+
+.app {
+    background: #fff;
+    width: 90%;
+    max-width: 600px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.app h1 {
+    font-size: 25px;
+    color: #001e4d;
+    font-weight: 600;
+    border-bottom: 1px solid #333;
+    padding-bottom: 30px;
+}
+
+.quiz {
+    padding: 20px 0;
+}
+
+.quiz h2 {
+    font-size: 18px;
+    color: #001e4d;
+    font-weight: 600;
+}
+
+.btn {
+    background: #fff;
+    color: #222;
+    font-weight: 500;
+    width: 100%;
+    border: 1px solid #222;
+    padding: 10px;
+    margin: 10px 0;
+    text-align: left;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover:not([disabled]) {
+    background: #000; /* Change background to black on hover */
+    color: #fff;
+}
+
+.btn:disabled {
+    cursor: no-drop;
+}
+
+#next-btn {
+    background: #001e4d;
+    color: #fff;
+    font-weight: 500;
+    width: 150px;
+    border: 0;
+    padding: 10px;
+    margin: 20px auto 0;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none;
+}
+
+.correct {
+    background: #00ff00; /* Bright green */
+}
+
+.incorrect {
+    background: #ff0000; /* Bright red */
+}
+
+.wrong {
+    background: #ff0000; /* Bright red */
+}
+
+#answer-buttons .btn.correct {
+    background-color: #00ff00; /* Bright green */
+}
+
+#answer-buttons .btn.wrong {
+    background-color: #ff0000; /* Bright red */
+}
+
+#answer-buttons .btn.selected {
+    pointer-events: none; /* Disable hover and click */
+    background-color: initial; /* Reset background color */
+    color: initial; /* Reset text color */
+    border-color: initial; /* Reset border color */
+}
+
+#answer-buttons .btn.correct.selected {
+    background-color: #00ff00; /* Bright green */
+}
+
+#answer-buttons .btn.wrong.selected {
+    background-color: #ff0000; /* Bright red */
+}
+
+.btn.disabled:hover {
+    background-color: initial; /* or any other color you want */
+    cursor: default;
+}
