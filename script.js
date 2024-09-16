@@ -1,3 +1,4 @@
+
 const questions = [
     {
         question: "Which is the largest animal in the world?",
@@ -8,6 +9,7 @@ const questions = [
             { text: "Giraffe", correct: false }
         ]
     },
+    
     {
         question: "Which is the largest planet in the solar system?",
         answers: [
@@ -65,7 +67,15 @@ function showQuestion() {
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
     questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
-    currentQuestion.answers.forEach(answer => {
+
+    // Shuffle the answers
+    let shuffledAnswers = [...currentQuestion.answers];
+    for (let i = shuffledAnswers.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [shuffledAnswers[i], shuffledAnswers[j]] = [shuffledAnswers[j], shuffledAnswers[i]];
+    }
+
+    shuffledAnswers.forEach(answer => {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
         button.classList.add("btn");
@@ -134,3 +144,11 @@ nextButton.addEventListener("click", () => {
 });
 
 startQuiz();
+
+
+
+
+
+
+
+
